@@ -1,5 +1,5 @@
 # canvasStreamer
-streams a canvas from one peer to another one. You can use this to stream webGL apps and control them via keyevents. (see demo)
+streams a canvas from one peer to another via webRTC and peerjs. You can use this to stream webGL apps and control them via keyevents. (see demo)
 
 ## Install
 
@@ -56,7 +56,7 @@ server.emitter.on('closed', () => {
   console.warn('connection closed');
 });
 server.emitter.on('clientKeyUp', (key) => {
-  console.log('Client pressed key:', clientId);
+  console.log('Client pressed key:', key);
 });
 ```
 
