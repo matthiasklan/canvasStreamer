@@ -3,7 +3,7 @@ streams a canvas from one peer to another via webRTC and peerjs. You can use thi
 
 ## Install
 
-First get the two js files from the build folder. Currently it is only possible to import the library with ES6! The `<script>` import doesn't find the constructor! 
+First get the two js files from the build folder and import them. For example with ES6 or the old fashion `<script>` way
 
 Server:
 ```javascript
