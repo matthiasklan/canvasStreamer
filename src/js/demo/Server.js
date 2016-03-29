@@ -3,16 +3,16 @@ import CanvasStreamerServer from '../canvasStreamerServer';
 import THREE from 'three';
 
 var server = new CanvasStreamerServer('canvas', {hideCanvas : true});
-server.emitter.on('connected', (clientId) => {
+server.on('connected', (clientId) => {
   console.log('connected to Client:', clientId);
 });
-server.emitter.on('error', (error) => {
+server.on('error', (error) => {
   console.error(error);
 });
-server.emitter.on('closed', () => {
+server.on('closed', () => {
   console.warning('connection closed');
 });
-server.emitter.on('clientKeyUp', (key) => {
+server.on('clientKeyUp', (key) => {
   if(key === '68'){ //w
     cube.position.x = cube.position.x+1;
   }

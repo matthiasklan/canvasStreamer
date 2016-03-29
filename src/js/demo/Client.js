@@ -1,10 +1,10 @@
 import CanvasStreamerClient from '../canvasStreamerClient';
 
 var client = new CanvasStreamerClient('output_image');
-client.emitter.on('error', (error) => {
+client.on('error', (error) => {
   console.error(error);
 });
-client.emitter.on('closed', () => {
+client.on('closed', () => {
   console.warning('connection closed');
 });
 

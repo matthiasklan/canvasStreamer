@@ -46,16 +46,16 @@ the promise will return your server id. You will need to pass this id to your cl
 The server is able to listen to several events, such as `connected`, `error`, `closed` and `clientKeyUp`:
 
 ```javascript
-server.emitter.on('connected', (clientId) => {
+server.on('connected', (clientId) => {
   console.log('connected to Client:', clientId);
 });
-server.emitter.on('error', (error) => {
+server.on('error', (error) => {
   console.error(error);
 });
-server.emitter.on('closed', () => {
+server.on('closed', () => {
   console.warn('connection closed');
 });
-server.emitter.on('clientKeyUp', (key) => {
+server.on('clientKeyUp', (key) => {
   console.log('Client pressed key:', key);
 });
 ```
@@ -68,7 +68,7 @@ server.stream();
 
 ### Client
 
-create a new client object and provide the dom id of your image tag, where you want to project the streamed canvas. 
+create a new client object and provide the dom id of your image tag, where you want to project the streamed canvas.
 
 ```javascript
 var client = new CanvasStreamerClient('output_image');
@@ -93,10 +93,10 @@ client.init({host: 'yourHostIP', port: 1337, path: '/peer', secure: false, serve
 The client is able to listen to two events, `error`, and `closed`:
 
 ```javascript
-client.emitter.on('error', (error) => {
+client.on('error', (error) => {
   console.error(error);
 });
-client.emitter.on('closed', () => {
+client.on('closed', () => {
   console.warn('connection closed');
 });
 ```

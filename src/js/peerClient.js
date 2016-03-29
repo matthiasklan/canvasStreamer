@@ -1,10 +1,12 @@
 import Peer from 'peerjs';
-import ee from 'event-emitter';
+import {
+    EventEmitter
+} from 'events';
 
-export default class PeerClient {
+export default class PeerClient extends EventEmitter {
 
   constructor() {
-    this.emitter = ee({});
+    super();
   }
 
   init({
@@ -39,16 +41,16 @@ export default class PeerClient {
         });
         connection.on('close', () => {
             this.connection = null;
-            this.emitter.emit('closed');
+            this.emit('closed');
         });
         connection.on('error', (error) => {
           this.connection = null;
-          this.emitter.emit('error', error);
+          this.emit('error', error);
         });
       });
       this.peer.on('error', (error) => {
         this.connection = null;
-        this.emitter.emit('error', error);
+        this.emit('error', error);
       });
     });
   }
@@ -65,7 +67,7 @@ export default class PeerClient {
           resolve();
       });
       connection.on('error', (error) => {
-        this.emitter.emit('error', error);
+        this.emit('error', error);
       });
     });
   }

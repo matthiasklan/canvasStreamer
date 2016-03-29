@@ -31,20 +31,20 @@ export default class CanvasStreamerServer extends PeerClient {
       parts = data.split("_");
       value = parts[1];
       this.connect(value).then(() => {
-        this.emitter.emit('connected', value);
+        this.emit('connected', value);
       });
     } else if (data.startsWith('kp_')) { //if keyPress
       parts = data.split("_");
       value = parts[1];
-      this.emitter.emit('clientKeyPress', value);
+      this.emit('clientKeyPress', value);
     } else if (data.startsWith('ku_')) { //if keyUp
       parts = data.split("_");
       value = parts[1];
-      this.emitter.emit('clientKeyUp', value);
+      this.emit('clientKeyUp', value);
     } else if (data.startsWith('kd_')) { //if keyDown
       parts = data.split("_");
       value = parts[1];
-      this.emitter.emit('clientKeyDown', value);
+      this.emit('clientKeyDown', value);
     } else {
       console.log(data);
     }
