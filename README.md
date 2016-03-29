@@ -114,7 +114,7 @@ the pressed keys on the client will be transmitted to the server.
 
 Here is a demo of streaming a three.js canvas:
 
-open the [Server](http://matthiasklan.github.io/canvasStreamer/Server/) and copy the peer id. Next
-open the [Client](http://matthiasklan.github.io/canvasStreamer/Client/) and enter the peer id.
+open the [Server](http://matthiasklan.github.io/canvasStreamer/Server/) and copy the peer id. Now
+open the [Client](http://matthiasklan.github.io/canvasStreamer/Client/) in a complete new window (not only tab!) or another device and enter the peer id.
 
 You can control the cube with `a` and `w`.
