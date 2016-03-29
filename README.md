@@ -108,7 +108,6 @@ the pressed keys on the client will be transmitted to the server.
 - you can look at the demo source code for a better understanding
 - maybe transmit Mouse events
 - only key up events are available, because key down would cause lags on webGL apps. maybe this can be solved with webworkers.
-- fix the import problems
 
 ## Demo
 
