@@ -22,7 +22,7 @@ import CanvasStreamerClient from 'path/to/canvasStreamerClient';
 create a new server object and provide the dom id of your canvas, you want to stream. in the second options parameter you can disable the renderig of the canvas on the server. This can be useful when you are streaming a webgl canvas, because you will gain some more speed. Additionally you can add the a decimal parameter `compression` (0-1), `frameskip` and `mimeType` (`"image/jpeg", "image/png", "image/webp"`) The defailt values are `mimeType = "image/jpeg", compression = 0.5, frameskip = 1`
 
 ```javascript
-var server = new CanvasStreamerServer('canvas', {hideCanvas : true});
+const server = new CanvasStreamerServer('canvas', {hideCanvas : true});
 ```
 
 the next step is to initiate the connection. Call the `init` method and provide a cloud api key from [peerjs.com](http://peerjs.com/peerserver) or you can add the `host`, `port`, `path` and `secure` values of your own peer server. For more info go to https://github.com/peers/peerjs-server
@@ -36,7 +36,7 @@ server.init({key: 'yourAPIkey'}).then((id) => {
 or
 
 ```javascript
-server.init({host: 'yourHostIP', port: 1337, path: '/peer', secure: false}).then((id) => {
+server.init({host: 'yourHostIP', port: 1337, path: '/peer', secure: true}).then((id) => {
   console.log('this is you server id', id);
 });
 ```
@@ -85,7 +85,7 @@ client.init({key: 'yourAPIkey', serverId: 'serversPeerId'}).then(() => {
 or
 
 ```javascript
-client.init({host: 'yourHostIP', port: 1337, path: '/peer', secure: false, serverId: 'serversPeerId' }).then(() => {
+client.init({host: 'yourHostIP', port: 1337, path: '/peer', secure: true, serverId: 'serversPeerId' }).then(() => {
   console.log('connected to Server');
 });
 ```
