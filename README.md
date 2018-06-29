@@ -111,6 +111,8 @@ the pressed keys on the client will be transmitted to the server.
 
 ## Demo
 
+> __Warning:__ The deployed demo is not working anymore, because the peerjs cloud does not support tls connections and the github pages ist switched to enforcing https connections.
+
 Here is a demo of streaming a three.js canvas:
 
 open the [Server](http://mklan.github.io/canvasStreamer/Server/) and copy the peer id. Now
